@@ -1,0 +1,14 @@
+# Auto detect text files and normalize LF
+* text=auto eol=lf
+
+# Java source
+*.java text eol=lf
+
+# Markdown
+*.md text eol=lf
+
+# Ignore binary normalization
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
