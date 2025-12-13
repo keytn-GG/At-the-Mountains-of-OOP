@@ -1,6 +1,18 @@
 package gamemaster;
 
+import java.util.Scanner;
+
 public class GameMaster {
+    private final Scanner sc;
+    
+    /**
+     * コンストラクタ
+     * @param sc Scannerの参照アドレスを受け取る
+     */
+    public GameMaster(Scanner sc) {
+        this.sc = sc;
+    }
+    
     /**
      * 単純な文字列を表示する
      * @param msg 表示したい文字列やメッセージ
@@ -24,5 +36,14 @@ public class GameMaster {
      */
     public void sayf(String msg, Object... args) {
         System.out.println(String.format(msg, args));
+    }
+    
+    /**
+     * Enterでメッセージ送りを促すメソッド
+     */
+    public void waitEnter() {
+        System.out.println("");
+        System.out.println("(Enterで続行)");
+        sc.nextLine();
     }
 }
