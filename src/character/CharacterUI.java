@@ -9,17 +9,17 @@ import gamemaster.GameMaster;
  * Characterのデータを入力・決定させるクラス
  */
 public class CharacterUI {
-    // コンストラクタの引数を格納する変数（Scanner型）
     private final Scanner sc;
-    // このクラス内でしゃべるゲームマスター
-    private final GameMaster gm = new GameMaster();
+    private final GameMaster gm;
 
     /**
      * コンストラクタ
-     * @param SC Scannerの参照アドレスを受け取る変数
+     * @param sc Scannerの参照アドレスを受け取る変数
+     * @param gm GameMasterインスタンスを受け取る変数
      */
-    public CharacterUI(Scanner sc) {
+    public CharacterUI(Scanner sc, GameMaster gm) {
         this.sc = sc;
+        this.gm = gm;
     }
 
     /**
@@ -31,21 +31,21 @@ public class CharacterUI {
         gm.say("君が今回の南極調査隊に参加する最後のメンバーだね。君の名前を教えてくれないか？");
         String name = sc.nextLine();
         gm.sayf("ありがとう。そしてようこそ、%s君。狂気山脈の調査登山隊へ！", name);
-        waitEnter();
+        gm.waitEnter();
 
         // Diceを生成して振ってhpを決定
         gm.say("...そうだな。見たところ君の体力は ");
         Dice hpDice = new Dice(3, 6);
         int hp = hpDice.roll() + 10;
         gm.sayf("%d といったところか", hp);
-        waitEnter();
+        gm.waitEnter();
 
         // Diceを生成して振ってsanを決定
         gm.say("...そして君の冷静さは ");
         Dice sanDice = new Dice(3, 6);
         int san = sanDice.roll() * 6;
         gm.sayf("%d といったところのようだな。", san);
-        waitEnter();
+        gm.waitEnter();
 
         int[] skills = allocateSkillPoints();
         int climb = skills[0];
@@ -113,7 +113,7 @@ public class CharacterUI {
                     return new int[] { climb, navigate, biology };
                 } else if (res.equalsIgnoreCase("n")) {
                     gm.sayf("合計が%dとなるようにもう一度教えてくれ。", TOTAL);
-                    waitEnter();
+                    gm.waitEnter();
                     break;
                 } else {
                     gm.say("yかnで答えよう。");
@@ -121,15 +121,6 @@ public class CharacterUI {
             }
 
         }
-    }
-
-    /**
-     * Enterで読み進めるメソッド
-     */
-    private void waitEnter() {
-        gm.say("");
-        gm.say("(Enterで続行)");
-        sc.nextLine();
     }
 
     /**
@@ -149,6 +140,6 @@ public class CharacterUI {
      */
     private void checkSkillErrorMessage(int limit, int total) {
         gm.sayf("各技能は0~%dで、合計が%dの範囲におさめてくれ。もう一度だ。", limit, total);
-        waitEnter();
+        gm.waitEnter();
     }
 }
