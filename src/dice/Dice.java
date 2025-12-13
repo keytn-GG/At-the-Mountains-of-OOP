@@ -1,5 +1,7 @@
 package dice;
 
+import java.util.Random;
+
 public class Dice {
     private final int count;
     private final int sides;
@@ -30,11 +32,9 @@ public class Dice {
      */
     public int roll() {
         int sum = 0;
+        Random rand = new Random();
         for (int i = 0; i < count; i++) {
-            //              ^^^^^ インスタンスが実行するメソッドかつ、コンストラクタ引数と区別できているのでthis.COUNTとする必要はない。
-            sum += (int) (Math.random() * sides) + 1;
-            //            ^^^^^^^^^^^^^ Math.random()の返り値は0.0~1.0なので、少数を整数になおすためにint型にキャスト
-            //                          最大値が1足りないので+1
+            sum += rand.nextInt(sides) + 1;
         }
         return sum;
     }
