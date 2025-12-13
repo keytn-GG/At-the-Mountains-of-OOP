@@ -22,6 +22,6 @@ public class Main {
         CharacterBuilder builder = new CharacterBuilder();
         Character player = builder.build(spec);
 
-        player.showStatus();
+//        player.showStatus();
     }
 }
