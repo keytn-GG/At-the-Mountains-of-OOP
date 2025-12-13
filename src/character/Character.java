@@ -1,5 +1,7 @@
 package character;
 
+import gamemaster.GameMaster;
+
 /**
  * Characterの実体になるクラス
  */
@@ -12,6 +14,8 @@ public class Character {
     private final int climbSkill;
     private final int navigateSkill;
     private final int biologySkill;
+    
+    private final GameMaster gm = new GameMaster();
     
     /**
      * コンストラクタ
@@ -36,13 +40,13 @@ public class Character {
     }
     
     public void showStatus() {
-        System.out.println("私のステータスは...");
-        System.out.println("---------------------------------");
-        System.out.println("HP（体力 / 最大体力） -> " + this.hp + " / " + this.maxHp);
-        System.out.println("SAN（正気度 / 最大正気度） -> " + this.san + " / " + this.maxSan);
-        System.out.println("技能：登攀（山や崖を上る能力） -> " + this.climbSkill);
-        System.out.println("技能：ナビゲート（道に迷わず進む能力） -> " + this.navigateSkill);
-        System.out.println("技能：生物学（生き物に関する知識） -> " + this.biologySkill);
-        System.out.println("---------------------------------");
+        gm.say("君のステータスは...");
+        gm.say("---------------------------------");
+        gm.sayf("HP（体力 / 最大体力） -> %d / %d", this.hp, this.maxHp);
+        gm.sayf("SAN（正気度 / 最大正気度） -> %d / %d", this.san, this.maxSan);
+        gm.sayf("技能：登攀（山や崖を上る能力） -> %d", this.climbSkill);
+        gm.sayf("技能：ナビゲート（道に迷わず進む能力） -> %d", this.navigateSkill);
+        gm.sayf("技能：生物学（生き物に関する知識） -> %d", this.biologySkill);
+        gm.say("---------------------------------");
     }
 }

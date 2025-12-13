@@ -3,13 +3,16 @@ package character;
 import java.util.Scanner;
 
 import dice.Dice;
+import gamemaster.GameMaster;
 
 /**
  * Characterのデータを入力・決定させるクラス
  */
 public class CharacterUI {
-    //    コンストラクタの引数を格納する変数（Scanner型）
+    // コンストラクタの引数を格納する変数（Scanner型）
     private final Scanner sc;
+    // このクラス内でしゃべるゲームマスター
+    private final GameMaster gm = new GameMaster();
 
     /**
      * コンストラクタ
@@ -24,24 +27,24 @@ public class CharacterUI {
      * @return CharacterSpecのインスタンス
      */
     public CharacterSpec createSpec() {
-        //        Scannerによるnameの決定
-        System.out.println("君が今回の南極調査隊に参加する最後のメンバーだね。君の名前を教えてくれないか？");
+        // Scannerによるnameの決定
+        gm.say("君が今回の南極調査隊に参加する最後のメンバーだね。君の名前を教えてくれないか？");
         String name = sc.nextLine();
-        System.out.println("ありがとう。そしてようこそ、" + name + "君。狂気山脈の調査登山隊へ！");
+        gm.sayf("ありがとう。そしてようこそ、%s君。狂気山脈の調査登山隊へ！", name);
         waitEnter();
 
-        //        Diceを生成して振ってhpを決定
-        System.out.println("...そうだな。見たところ君の体力は ");
+        // Diceを生成して振ってhpを決定
+        gm.say("...そうだな。見たところ君の体力は ");
         Dice hpDice = new Dice(3, 6);
         int hp = hpDice.roll() + 10;
-        System.out.println(hp + " といったところか");
+        gm.sayf("%d といったところか", hp);
         waitEnter();
 
-        //        Diceを生成して振ってsanを決定
-        System.out.println("...そして君の冷静さは ");
+        // Diceを生成して振ってsanを決定
+        gm.say("...そして君の冷静さは ");
         Dice sanDice = new Dice(3, 6);
         int san = sanDice.roll() * 6;
-        System.out.println(san + " といったところのようだな。");
+        gm.sayf("%d といったところのようだな。", san);
         waitEnter();
 
         int[] skills = allocateSkillPoints();
@@ -63,10 +66,10 @@ public class CharacterUI {
         while (true) {
             // ループの中で減っていく、技能の合計上限値
             int remaining = TOTAL;
-            System.out.println("君の【登攀】【ナビゲート】【生物学】それぞれの技量を教えてくれ。（合計で" + TOTAL + "）");
+            gm.sayf("君の【登攀】【ナビゲート】【生物学】それぞれの技量を教えてくれ。（合計で%d）", TOTAL);
 
             // 1つ目の技能
-            System.out.print("登攀（山や崖を上る能力： 0~" + SKILL_LIMIT + ") -> ");
+            gm.sayf("登攀（山や崖を上る能力： 0~%d) -> ", SKILL_LIMIT);
             int climb = sc.nextInt();
             sc.nextLine();
             // ^^^^^^^^^ 改行やスペースなどが次の.nextに入ってしまわないようにする
@@ -80,7 +83,7 @@ public class CharacterUI {
             // 2つ目の技能
             int navigateLimit = Math.min(SKILL_LIMIT, remaining);
             //                  ^^^^^^^^ SKILL_LIMITと残りの上限値で小さい方を返却する
-            System.out.print("ナビゲート（道に迷わず進む能力: 0~" + navigateLimit + "） -> ");
+            gm.sayf("ナビゲート（道に迷わず進む能力: 0~%d） -> ", navigateLimit);
             int navigate = sc.nextInt();
             sc.nextLine();
             if (!checkSkillLimit(navigate, navigateLimit)) {
@@ -92,28 +95,28 @@ public class CharacterUI {
 
             // 3つめの技能は自動で算定
             int biology = remaining;
-            System.out.println("生物学（生き物に関する知識） -> " + biology);
+            gm.sayf("生物学（生き物に関する知識） -> %d", biology);
 
             while (true) {
-                System.out.println("以下の能力だ。間違いないか？（y/n）");
-                System.out.println("---------------------------------");
-                System.out.println("登攀 -> " + climb);
-                System.out.println("ナビゲート -> " + navigate);
-                System.out.println("生物学 -> " + biology);
-                System.out.println("---------------------------------");
+                gm.say("以下の能力だ。間違いないか？（y/n）");
+                gm.say("---------------------------------");
+                gm.sayf("登攀 -> %d", climb);
+                gm.sayf("ナビゲート -> %d", navigate);
+                gm.sayf("生物学 -> %d", biology);
+                gm.say("---------------------------------");
 
                 String res = sc.nextLine().trim();
                 //                        ^^^^^^^ String型で使える「スペースなどを取り除く」メソッド」
 
                 if (res.equalsIgnoreCase("y")) {
-                    System.out.println("ありがとう。それでは、先に到着しているキャンプ設営組に合流しよう！");
+                    gm.say("ありがとう。それでは、先に到着しているキャンプ設営組に合流しよう！");
                     return new int[] { climb, navigate, biology };
                 } else if (res.equalsIgnoreCase("n")) {
-                    System.out.println("合計が" + TOTAL + "となるようにもう一度教えてくれ。");
+                    gm.sayf("合計が%dとなるようにもう一度教えてくれ。", TOTAL);
                     waitEnter();
                     break;
                 } else {
-                    System.out.println("yかnで答えよう。");
+                    gm.say("yかnで答えよう。");
                 }
             }
 
@@ -124,8 +127,8 @@ public class CharacterUI {
      * Enterで読み進めるメソッド
      */
     private void waitEnter() {
-        System.out.println("");
-        System.out.println("(Enterで続行)");
+        gm.say("");
+        gm.say("(Enterで続行)");
         sc.nextLine();
     }
 
@@ -145,7 +148,7 @@ public class CharacterUI {
      * @param total 全技能の合計上限値
      */
     private void checkSkillErrorMessage(int limit, int total) {
-        System.out.println("各技能は0~" + limit + "で、合計が" + total + "の範囲におさめてくれ。もう一度だ。");
+        gm.sayf("各技能は0~%dで、合計が%dの範囲におさめてくれ。もう一度だ。", limit, total);
         waitEnter();
     }
 }
