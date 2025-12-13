@@ -1,5 +1,8 @@
 package character;
 
+/**
+ * Characterの実体になるクラス
+ */
 public class Character {
     private final String name;
     private int hp;
@@ -10,6 +13,17 @@ public class Character {
     private final int navigateSkill;
     private final int biologySkill;
     
+    /**
+     * コンストラクタ
+     * @param name 名前
+     * @param hp ヒットポイント。0で死亡する。
+     * @param maxHp 最大ヒットポイント
+     * @param san 正気度。0で廃人になる。
+     * @param maxSan 最大正気度
+     * @param climbSkill 登攀スキルの成功率
+     * @param navigateSkill ナビゲートスキルの成功率
+     * @param biologySkill 生物学スキルの成功率
+     */
     public Character(String name, int hp, int maxHp, int san, int maxSan, int climbSkill, int navigateSkill, int biologySkill) {
         this.name = name;
         this.hp = hp;
