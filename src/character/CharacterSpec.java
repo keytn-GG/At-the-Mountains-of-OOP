@@ -1,5 +1,8 @@
 package character;
 
+/**
+ * UIから確定した値を保持するクラス
+ */
 public class CharacterSpec {
     private final String name;
     private final int hp;
@@ -8,6 +11,15 @@ public class CharacterSpec {
     private final int navigateSkill;
     private final int biologySkill;
 
+    /**
+     * コンストラクタ
+     * @param name
+     * @param hp
+     * @param san
+     * @param climb
+     * @param navigate
+     * @param biology
+     */
     public CharacterSpec(String name, int hp, int san, int climb, int navigate, int biology) {
         this.name = name;
         this.hp = hp;
@@ -17,7 +29,7 @@ public class CharacterSpec {
         this.biologySkill = biology;
     }
 
-    //    getter / setter
+    // getter / setter
     public String getName() {
         return name;
     }

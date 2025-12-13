@@ -4,8 +4,11 @@ import java.util.Scanner;
 
 import dice.Dice;
 
+/**
+ * Characterのデータを入力・決定させるクラス
+ */
 public class CharacterUI {
-    //    コンストラクタの引数を受け取るためにScanner型
+    //    コンストラクタの引数を格納する変数（Scanner型）
     private final Scanner sc;
 
     /**
