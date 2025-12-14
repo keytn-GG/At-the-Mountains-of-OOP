@@ -1,5 +1,6 @@
 package scene;
 
+import character.Character;
 import game.GameContext;
 import view.CharacterStatusView;
 
@@ -12,5 +13,12 @@ public class StatusViewScene implements Scene {
         this.view = new CharacterStatusView(ctx.getGm());
     }
     
-    public Scene play();
+    public Scene play() {
+        Character player = ctx.getPlayer();
+        
+        view.show(player);
+        ctx.getGm().waitEnter();
+        
+        return null;
+    };
 }
