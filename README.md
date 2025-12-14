@@ -48,3 +48,9 @@ mainパッケージの、Main.javaを実行してください。
 ## ダウンロード
 Githubで公開中。  
 https://github.com/keytn-GG/At-the-Mountains-of-OOP
+
+下記の手順でダウンロードしてください。
+
+1. 上記URLへアクセス
+2. 「<> Code」という青色のボタンをクリック
+3. 「Download Zip」をクリック
