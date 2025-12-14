@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 import game.GameContext;
 import gamemaster.GameMaster;
-import scene.CharacterCreateScene;
 import scene.Scene;
+import scene.TitleScene;
 //import view.CharacterStatusView;
 
 public class Main {
@@ -20,7 +20,7 @@ public class Main {
         GameContext ctx = new GameContext(sc, gm);
 
         // 最初のシーンだけインスタンス化。ctxを渡す。
-        Scene scene = new CharacterCreateScene(ctx);
+        Scene scene = new TitleScene(ctx);
 
         // sceneに何も返ってこなくなるまで繰り返す
         while (scene != null) {
