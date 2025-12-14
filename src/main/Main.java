@@ -7,12 +7,14 @@ import character.CharacterBuilder;
 import character.CharacterSpec;
 import character.CharacterUI;
 import gamemaster.GameMaster;
+import view.CharacterStatusView;
 
 public class Main {
     public static void main(String[] args) {
         // ScannerとGameMasterを準備
         Scanner sc = new Scanner(System.in);
         GameMaster gm = new GameMaster(sc);
+        CharacterStatusView statusView = new CharacterStatusView(gm);
 
         // キャラクターのデータを作る
         CharacterUI ui = new CharacterUI(sc, gm);
@@ -22,6 +24,6 @@ public class Main {
         CharacterBuilder builder = new CharacterBuilder();
         Character player = builder.build(spec);
 
-//        player.showStatus();
+        statusView.show(player);
     }
 }
