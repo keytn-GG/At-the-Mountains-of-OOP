@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import character.Character;
 import gamemaster.GameMaster;
+import view.CharacterStatusView;
 
 /**
  * ゲーム中、各Sceneに渡されるものをまとめるクラス
@@ -12,6 +13,7 @@ public class GameContext {
     private final Scanner sc;
     private final GameMaster gm;
     private Character player;
+    private CharacterStatusView status;
     
     /**
      * コンストラクタ
