@@ -6,7 +6,6 @@ import game.GameContext;
 import gamemaster.GameMaster;
 import scene.Scene;
 import scene.TitleScene;
-//import view.CharacterStatusView;
 
 public class Main {
     public static void main(String[] args) {

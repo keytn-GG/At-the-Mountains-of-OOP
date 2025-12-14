@@ -2,13 +2,24 @@ package scene;
 
 import game.GameContext;
 
+/**
+ * タイトルを表示するシーン
+ */
 public class TitleScene implements Scene {
     private final GameContext ctx;
     
+    /**
+     * コンストラクタ
+     * @param ctx GameContextを受け取る変数
+     */
     public TitleScene(GameContext ctx) {
         this.ctx = ctx;
     }
     
+    /**
+     * このSceneのplay()
+     * AAを表示した後に、Enterで続行待ちする
+     */
     public Scene play() {
         ctx.getGm().say("""
                 
@@ -37,7 +48,6 @@ public class TitleScene implements Scene {
         
         ctx.getGm().waitEnter();
         
-//        return new IntroScene(ctx);
-        return null;
+        return new IntroScene(ctx);
     }
 }
