@@ -11,7 +11,7 @@ import view.CharacterStatusView;
 
 public class Main {
     public static void main(String[] args) {
-        // ScannerとGameMasterを準備
+        // ゲームのユーティリティになるものを準備
         Scanner sc = new Scanner(System.in);
         GameMaster gm = new GameMaster(sc);
         CharacterStatusView statusView = new CharacterStatusView(gm);
