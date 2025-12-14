@@ -2,28 +2,29 @@ package main;
 
 import java.util.Scanner;
 
-import character.Character;
-import character.CharacterBuilder;
-import character.CharacterSpec;
-import character.CharacterUI;
+import game.GameContext;
 import gamemaster.GameMaster;
-import view.CharacterStatusView;
+import scene.CharacterCreateScene;
+import scene.Scene;
+//import view.CharacterStatusView;
 
 public class Main {
     public static void main(String[] args) {
-        // ScannerとGameMasterを準備
+        // 入力の準備 -> Scanner
         Scanner sc = new Scanner(System.in);
+
+        // GMの準備 -> GameMaster
         GameMaster gm = new GameMaster(sc);
-        CharacterStatusView statusView = new CharacterStatusView(gm);
 
-        // キャラクターのデータを作る
-        CharacterUI ui = new CharacterUI(sc, gm);
-        CharacterSpec spec = ui.createSpec();
+        // シーンに渡される引数のセットを準備 -> GameContext
+        GameContext ctx = new GameContext(sc, gm);
 
-        // キャラクターを組み立てる
-        CharacterBuilder builder = new CharacterBuilder();
-        Character player = builder.build(spec);
+        // 最初のシーンだけインスタンス化。ctxを渡す。
+        Scene scene = new CharacterCreateScene(ctx);
 
-        statusView.show(player);
+        // sceneに何も返ってこなくなるまで繰り返す
+        while (scene != null) {
+            scene = scene.play();
+        }
     }
 }
