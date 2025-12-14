@@ -16,4 +16,6 @@ public class CharacterCreateScene implements Scene {
     // キャラクターを組み立てる
     CharacterBuilder builder = new CharacterBuilder();
     Character player = builder.build(spec);
+    
+    public Scene play();
 }
