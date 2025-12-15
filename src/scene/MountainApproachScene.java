@@ -87,7 +87,7 @@ public class MountainApproachScene extends BaseScene implements Scene {
             gm.waitEnter();
 
             gm.say("""
-                    --- 転倒！ ---
+                    --- バランスを失い岩壁に叩きつけられる！ ---
                     --- 1D6 のHPダメージロール ---
                     """);
 
