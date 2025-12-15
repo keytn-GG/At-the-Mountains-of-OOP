@@ -36,8 +36,12 @@ public class Character {
         this.biologySkill = biologySkill;
     }
     
-    public void damageHp(int damage) {
-    	this.hp -= damage;
+    public void damageHp(int amount) {
+    	hp -= amount;
+    	
+    	if (hp < 0) {
+    		hp = 0;
+    	}
     }
     
     //  getter / setter
