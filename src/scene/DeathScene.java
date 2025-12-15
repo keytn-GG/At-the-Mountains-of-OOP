@@ -45,6 +45,7 @@ public class DeathScene implements Scene {
 				--- あなたは死亡した ---
 				--- Enterでタイトルへ戻る ---
 				""");
+		gm.waitEnter();
 		
 		return new TitleScene(ctx);
 	}
