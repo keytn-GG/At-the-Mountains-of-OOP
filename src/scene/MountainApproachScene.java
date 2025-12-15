@@ -4,14 +4,29 @@ import character.Character;
 import dice.Dice;
 import game.GameContext;
 
+/**
+ * 第1幕の登山シーン
+ * HP減少イベントあり
+ */
 public class MountainApproachScene extends BaseScene implements Scene {
 	private Character player;
 	
+	/**
+	 * コンストラクタ
+	 * 継承 + player
+	 * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
+	 */
 	public MountainApproachScene(GameContext ctx) {
 		super(ctx);
 		this.player = ctx.getPlayer();
 	}
 	
+	/**
+	 * このシーンのplay()
+	 * 途中でHP減少イベント
+	 * HPが 0 になった場合に死亡エンディングに分岐
+	 */
+	@Override
 	public Scene play() {
 		gm.say("""
 				調査隊は、山脈の麓に差し掛かった。

@@ -6,13 +6,19 @@ import game.GameContext;
  * タイトルを表示するシーン
  */
 public class TitleScene extends BaseScene implements Scene {
+    /**
+     * コンストラクタ
+     * 継承のみ
+     * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
+     */
     public TitleScene(GameContext ctx) {
         super(ctx);
     }
     
     /**
-     * このSceneのplay()
-     * AAを表示した後に、Enterで続行待ちする
+     * このシーンのplay()
+     * テキストのみ
+     * 各エンディング（生還、死亡、廃人）後に戻ってくる
      */
     @Override
     public Scene play() {

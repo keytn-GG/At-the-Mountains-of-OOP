@@ -3,14 +3,26 @@ package scene;
 import character.Character;
 import game.GameContext;
 
-public class DeathScene extends BaseScne implements Scene {
+/**
+ * 死亡エンディングシーン
+ */
+public class DeathScene extends BaseScene implements Scene {
 	private Character player;
 	
+	/**
+	 * コンストラクタ
+	 * 継承 + player
+	 * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
+	 */
 	public DeathScene(GameContext ctx) {
 	    super(ctx);
 		this.player = ctx.getPlayer();
 	}
 	
+	/**
+	 * このシーンのplay()
+	 * HPが 0 になって死亡した場合のシーン
+	 */
 	@Override
 	public Scene play() {
 		gm.say("""

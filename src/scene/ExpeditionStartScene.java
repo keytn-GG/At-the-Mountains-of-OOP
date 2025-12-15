@@ -3,14 +3,26 @@ package scene;
 import character.Character;
 import game.GameContext;
 
+/**
+ * 第1幕：調査開始シーン
+ */
 public class ExpeditionStartScene extends BaseScene implements Scene {
 	private Character player;
 	
+	/**
+	 * コンストラクタ
+	 * 継承 + player
+	 * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
+	 */
 	public ExpeditionStartScene(GameContext ctx) {
 		super(ctx);
 		this.player = ctx.getPlayer();
 	}
 	
+	/**
+	 * このシーンのplay()
+	 * テキストのみ
+	 */
 	public Scene play() {
 		gm.say("""
 				~~~~~~~~~~~~~~~~~~~~~~~
