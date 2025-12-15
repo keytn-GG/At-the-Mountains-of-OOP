@@ -62,6 +62,7 @@ public class StatusViewScene implements Scene {
         gm.waitEnter();
         
         gm.say("——あるいは、想像もできないような何かが起こるのだろうか。");
+        gm.waitEnter();
         
         gm.say("ついに過酷な調査が始まる......");
         gm.waitEnter();
