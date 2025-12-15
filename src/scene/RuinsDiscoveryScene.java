@@ -135,15 +135,25 @@ public class RuinsDiscoveryScene extends BaseScene implements Scene {
             
             gm.say("""
                     --- 理解不能 ---
-                    --- 1D6 のSANダメージロール ---
+                    --- 1D6 の正気度ダメージ ---
                     """);
             
+            // 変化前の現在値をローカル変数に閉じ込める
+            int beforeSan = player.getSan();
+            
+            // ダメージ決定ロール
             Dice dice = new Dice(1, 6);
             int damage = dice.roll();
             
-            gm.sayf("--- %d の正気度を喪失する ---", damage);
+            // ダメージを与える
             player.damageSan(damage);
-            gm.sayf("SAN %d -> %d", player.getMaxSan(), player.getSan());
+            
+            // 変化後の現在値をローカル変数に閉じ込める
+            int afterSan = player.getSan();
+            
+            gm.sayf("--- %d の正気度を喪失する ---", damage);
+            // 変化前と変化後の値で、差分を表現
+            gm.sayf("正気度 %d -> %d", beforeSan, afterSan);
             
             if (player.isInsane()) {
                 return new InsaneScene(ctx);
@@ -170,9 +180,12 @@ public class RuinsDiscoveryScene extends BaseScene implements Scene {
 		        """);
 		gm.waitEnter();
 		
-        gm.say("--- Enterでさらに山奥へ進む ---");
+        gm.say("""
+                --- もうすぐ、夜が来る ---
+                --- Enterでキャンプを設営する ---
+                """);
         gm.waitEnter();
 		
-		return null;
+		return new CampNightScene(ctx);
 	}
 }
