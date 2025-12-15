@@ -287,6 +287,6 @@ public class Act03EncounterScene extends BaseScene implements Scene {
                 """);
         gm.waitEnter();
                 
-        return null;
+        return new Act03PeakAttackScene(ctx);
     }
 }
