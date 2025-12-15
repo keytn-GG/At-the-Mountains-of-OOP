@@ -59,7 +59,7 @@ public class MountainApproachScene extends BaseScene implements Scene {
 			gm.say("......");
 			gm.waitEnter();
 			
-			gm.sayf("--- %d 成功！ ---", roll);
+			gm.sayf("--- %d （あなたの技能値: %d） 成功！ ---", roll, player.getClimbSkill());
 			gm.waitEnter();
 			
 			gm.say("""
@@ -72,11 +72,12 @@ public class MountainApproachScene extends BaseScene implements Scene {
 					「%s、いい動きだ」
 					「その調子で行け」
 					""", player.getName());
+			gm.waitEnter();
 		} else {
 			gm.say("......");
 			gm.waitEnter();
 			
-			gm.sayf("--- %d -> 失敗！ ---", roll);
+			gm.sayf("--- %d （あなたの技能値: %d） -> 失敗！ ---", roll, player.getClimbSkill());
 			gm.waitEnter();
 			
 			gm.say("""
@@ -107,6 +108,7 @@ public class MountainApproachScene extends BaseScene implements Scene {
 					「くそ……%s、無事か！？」
 					「無理をするな、次は確実に行け」
 					""", player.getName());
+			gm.waitEnter();
 		}
 		
 		gm.say("""
@@ -115,7 +117,6 @@ public class MountainApproachScene extends BaseScene implements Scene {
 				""");
 		gm.waitEnter();
 		
-		gm.say("");
         gm.say("--- Enterでさらに山奥へ進む ---");
         gm.waitEnter();
 		

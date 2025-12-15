@@ -37,7 +37,7 @@ public class RuinsDiscoveryScene extends BaseScene implements Scene {
 		gm.say("君たち調査隊は、無限に続くかのような難所を必死で越え続けた。");
 		gm.waitEnter();
 		
-		gm.say("ここは少し開けている。ありがたい！休めそうだ、そう思った時");
+		gm.say("顔をあげ、あたりを見渡すとここは少し開けている。ありがたい！休めそうだ、そう思った時");
 		gm.waitEnter();
 		
 		gm.say("""
@@ -90,7 +90,7 @@ public class RuinsDiscoveryScene extends BaseScene implements Scene {
 			gm.say("......");
 			gm.waitEnter();
 			
-			gm.sayf("--- %d 成功！ ---", roll);
+			gm.sayf("--- %d （あなたの技能値: %d） 成功！ ---", roll, player.getBiologySkill());
 			gm.waitEnter();
 			
 			gm.say("""
@@ -116,11 +116,12 @@ public class RuinsDiscoveryScene extends BaseScene implements Scene {
 				「……生物、なのか？」
 				「いや……そんなはずは……」
 					""");
+			gm.waitEnter();
 		} else {
 		    gm.say("......");
             gm.waitEnter();
             
-            gm.sayf("--- %d -> 失敗！ ---", roll);
+            gm.sayf("--- %d （あなたの技能値: %d） -> 失敗！ ---", roll, player.getBiologySkill());
             gm.waitEnter();
             
             gm.say("""
@@ -156,6 +157,7 @@ public class RuinsDiscoveryScene extends BaseScene implements Scene {
                     
                     “理解しかけた”ことへの拒絶だった。
                     """);
+            gm.waitEnter();
 		}
 		
 		gm.say("""
@@ -168,7 +170,6 @@ public class RuinsDiscoveryScene extends BaseScene implements Scene {
 		        """);
 		gm.waitEnter();
 		
-		gm.say("");
         gm.say("--- Enterでさらに山奥へ進む ---");
         gm.waitEnter();
 		
