@@ -248,7 +248,11 @@ public class Act03EncounterScene extends BaseScene implements Scene {
                 """);
         gm.waitEnter();
         
-        gm.say("吹雪と岩壁に阻まれ、下へは戻れない。");
+        gm.say("""
+                吹雪と岩壁に阻まれ、下へは戻れない。
+                
+                ここは陰になっているのか、眼前には暗黒が広がっている。
+                """);
         gm.waitEnter();
         
         gm.say("""
