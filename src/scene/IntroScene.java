@@ -55,13 +55,15 @@ public class IntroScene implements Scene {
     	gm.say("経験、技能、そして運。\n条件を満たす人員は多くなかった。");
     	gm.waitEnter();
     	
-    	gm.say("君は調査隊に合流する、\n最後のメンバーとして、\n南極へ向かうことになった。");
+    	gm.say("君は調査隊に合流する最後のメンバーとして、\n南極へ向かうことになった。");
     	gm.waitEnter();
     	
     	gm.say("キャンプではすでに、\n先行した隊員たちが君を待っている。\n彼らはまだ知らない。\nこの探検が、どこへ辿り着くのかを。");
     	gm.waitEnter();
     	
     	gm.say("あるいは――\n知ってはならないことを、\nすでに踏み越えてしまっているのかもしれない。");
+    	gm.say("");
+    	gm.say("--- Enterでキャンプへ合流する ---");
     	gm.waitEnter();
     	
         return new CharacterCreateScene(ctx);

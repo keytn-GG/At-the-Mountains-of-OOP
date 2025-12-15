@@ -118,7 +118,7 @@ public class CharacterUI {
             // ループの中で減っていく、技能の合計上限値
             int remaining = TOTAL;
             
-            gm.sayf("--- それぞれ0~%dまで、合計が%dとなるように割り振ろう ---", SKILL_LIMIT, TOTAL);
+            gm.sayf("--- それぞれのスキルにポイントを0~%dまで、合計が%dとなるように割り振ろう ---", SKILL_LIMIT, TOTAL);
             gm.waitEnter();
 
             // 1つ目の技能
