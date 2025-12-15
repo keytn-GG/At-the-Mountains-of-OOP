@@ -48,7 +48,7 @@ public class MountainApproachScene implements Scene {
 			gm.say("......");
 			gm.waitEnter();
 			
-			gm.say("--- 成功！ ---");
+			gm.sayf("--- %d 成功！ ---", roll);
 			gm.waitEnter();
 			
 			gm.say("""
@@ -65,7 +65,7 @@ public class MountainApproachScene implements Scene {
 			gm.say("......");
 			gm.waitEnter();
 			
-			gm.say("--- 失敗！ ---");
+			gm.sayf("--- %d -> 失敗！ ---", roll);
 			gm.waitEnter();
 			
 			gm.say("""
@@ -84,6 +84,7 @@ public class MountainApproachScene implements Scene {
 			
 			gm.sayf("--- %d のダメージを受ける ---", damage);
 			player.damageHp(damage);
+			gm.sayf("HP %d -> %d", player.getMaxHp(), player.getHp());
 			gm.waitEnter();
 			
 			gm.say("""
@@ -93,7 +94,7 @@ public class MountainApproachScene implements Scene {
 		}
 		
 		gm.say("""
-				痛みを抱えながらも、君は体勢を立て直す。
+				君は落ち着いて体勢を立て直す。
 				山は、まだ始まったばかりだ。
 				""");
 		
