@@ -68,10 +68,10 @@ public class MountainApproachScene extends BaseScene implements Scene {
 					""");
 			gm.waitEnter();
 			
-			gm.say("""
-					「いい動きだ」
+			gm.sayf("""
+					「%s、いい動きだ」
 					「その調子で行け」
-					""");
+					""", player.getName());
 		} else {
 			gm.say("......");
 			gm.waitEnter();
@@ -103,10 +103,10 @@ public class MountainApproachScene extends BaseScene implements Scene {
 			
 			gm.waitEnter();
 			
-			gm.say("""
-					「くそ……無事か！？」
+			gm.sayf("""
+					「くそ……%s、無事か！？」
 					「無理をするな、次は確実に行け」
-					""");
+					""", player.getName());
 		}
 		
 		gm.say("""

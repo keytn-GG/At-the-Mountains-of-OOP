@@ -68,7 +68,7 @@ public class CharacterUI {
         gm.waitEnter();
         Dice hpDice = new Dice(3, 6);
         int hp = hpDice.roll() + 10;
-        gm.sayf("「……%d といったところだな」", hp);
+        gm.sayf("「…… %d といったところだな」", hp);
         gm.say("「無理はするな。ここでは、倒れたら終わりだ」");
         gm.waitEnter();
 
@@ -80,7 +80,7 @@ public class CharacterUI {
         gm.waitEnter();
         Dice sanDice = new Dice(3, 6);
         int san = sanDice.roll() * 6;
-        gm.sayf("「君の冷静さはおよそ……%d」", san);
+        gm.sayf("「君の冷静さはおよそ…… %d 」", san);
         gm.say("「悪くない。だが、油断はするな」");
         gm.waitEnter();
 

@@ -31,6 +31,14 @@ public class CharacterCreateScene extends BaseScene implements Scene {
      */
     @Override
     public Scene play() {
+        gm.say("""
+                ~~~~~~~~~~~~~~~~~~~~~~~
+                    調 査 隊 キ ャ ン プ
+                ~~~~~~~~~~~~~~~~~~~~~~~
+                """);
+        gm.say("");
+        gm.waitEnter();
+        
         // キャラクターのデータを作る
         CharacterUI ui = new CharacterUI(ctx.getSc(), gm);
         CharacterSpec spec = ui.createSpec();
