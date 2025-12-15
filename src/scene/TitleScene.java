@@ -20,6 +20,7 @@ public class TitleScene implements Scene {
      * このSceneのplay()
      * AAを表示した後に、Enterで続行待ちする
      */
+    @Override
     public Scene play() {
         ctx.getGm().say("""
                 

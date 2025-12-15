@@ -23,6 +23,7 @@ public class IntroScene implements Scene {
      * このSceneのplay()
      * 
      */
+    @Override
     public Scene play() {
     	gm.say("南極大陸。\n人類が地図に書き残した、最後の空白。");
     	gm.waitEnter();
