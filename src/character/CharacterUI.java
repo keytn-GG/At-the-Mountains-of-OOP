@@ -157,13 +157,14 @@ public class CharacterUI {
             	gm.waitEnter();
             	
             	gm.say("「これが、君の能力だ」");
-            	gm.say("「間違いはないか？」（y/n）");
                 gm.say("---------------------------------");
                 gm.sayf("登攀 -> %d", climb);
                 gm.sayf("ナビゲート -> %d", navigate);
                 gm.sayf("生物学 -> %d", biology);
                 gm.say("---------------------------------");
+                gm.waitEnter();
 
+                gm.say("「間違いはないか？」（y/n）");
                 String res = sc.nextLine().trim();
                 //                        ^^^^^^^ String型で使える「スペースなどを取り除く」メソッド」
 
