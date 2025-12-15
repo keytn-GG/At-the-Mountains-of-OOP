@@ -73,6 +73,6 @@ public class ExpeditionStartScene implements Scene {
 				""");
 		gm.waitEnter();
 		
-		return null;
+		return new MountainApproachScene(ctx);
 	}
 }

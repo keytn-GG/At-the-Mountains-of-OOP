@@ -57,7 +57,7 @@ public class StatusViewScene implements Scene {
         gm.say("隊長の言葉に身が引き締まる。");
         gm.waitEnter();
         
-        gm.say("この名状しがたい過酷な山脈で、体力や精神力が尽きたとき......");
+        gm.say("この名状しがたい雰囲気をたたえた過酷な山脈で、体力や精神力が尽きたとき......");
         gm.say("自分の身に何が起きるのか、想像に難くない。");
         gm.waitEnter();
         
