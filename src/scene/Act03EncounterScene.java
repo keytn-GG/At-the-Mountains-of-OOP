@@ -57,6 +57,7 @@ public class Act03EncounterScene extends BaseScene implements Scene {
                 何と幸運なことか！
                 
                 隊長の声は、かすれていた。
+                
                 隊長は、ランプを持つ手をゆっくりと上げる。
                 """);
         gm.waitEnter();
@@ -68,6 +69,8 @@ public class Act03EncounterScene extends BaseScene implements Scene {
         
         gm.say("""
                 そこに“何か”がいた。
+                
+                名状しがたい気配に、生存の喜びも消え失せる。
                 """);
         gm.waitEnter();
         
@@ -200,8 +203,6 @@ public class Act03EncounterScene extends BaseScene implements Scene {
         gm.waitEnter();
         
         gm.say("そして。");
-        gm.waitEnter();
-        
         gm.say("闇の奥で、何かが“こちらを向いた”気配がした。");
         gm.waitEnter();
         
