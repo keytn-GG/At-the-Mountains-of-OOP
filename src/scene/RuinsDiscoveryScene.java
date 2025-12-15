@@ -116,7 +116,61 @@ public class RuinsDiscoveryScene extends BaseScene implements Scene {
 				「……生物、なのか？」
 				「いや……そんなはずは……」
 					""");
-		} else {}
+		} else {
+		    gm.say("......");
+            gm.waitEnter();
+            
+            gm.sayf("--- %d -> 失敗！ ---", roll);
+            gm.waitEnter();
+            
+            gm.say("""
+                    模様を見つめた瞬間、
+                    頭の奥で何かが軋んだ。
+                    
+                    目の前の形が、
+                    意味を持って“繋がろう”とする。
+                    """);
+            gm.waitEnter();
+            
+            gm.say("""
+                    --- 理解不能 ---
+                    --- 1D6 のSANダメージロール ---
+                    """);
+            
+            Dice dice = new Dice(1, 6);
+            int damage = dice.roll();
+            
+            gm.sayf("--- %d の正気度を喪失する ---", damage);
+            player.damageSan(damage);
+            gm.sayf("SAN %d -> %d", player.getMaxSan(), player.getSan());
+            
+            if (player.isInsane()) {
+                return new InsaneScene(ctx);
+            }
+            
+            gm.waitEnter();
+            
+            gm.say("""
+                    説明のつかない恐怖が、胸を締め付ける。
+                    それは未知への恐怖ではない。
+                    
+                    “理解しかけた”ことへの拒絶だった。
+                    """);
+		}
+		
+		gm.say("""
+		        吹雪が、再び視界を覆う。
+		        
+		        遺構は、何事もなかったかのように
+		        雪の中へと姿を隠した。
+		        
+		        だが、見てしまったものは消えない。
+		        """);
+		gm.waitEnter();
+		
+		gm.say("");
+        gm.say("--- Enterでさらに山奥へ進む ---");
+        gm.waitEnter();
 		
 		return null;
 	}

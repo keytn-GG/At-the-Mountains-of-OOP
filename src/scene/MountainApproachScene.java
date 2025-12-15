@@ -87,7 +87,7 @@ public class MountainApproachScene extends BaseScene implements Scene {
 			
 			gm.say("""
 					--- 転倒！ ---
-					--- 1D6 のダメージロール ---
+					--- 1D6 のHPダメージロール ---
 					""");
 			
 			Dice damageDice = new Dice(1, 6);
@@ -113,6 +113,11 @@ public class MountainApproachScene extends BaseScene implements Scene {
 				君は落ち着いて体勢を立て直す。
 				山は、まだ始まったばかりだ。
 				""");
+		gm.waitEnter();
+		
+		gm.say("");
+        gm.say("--- Enterでさらに山奥へ進む ---");
+        gm.waitEnter();
 		
 		return new RuinsDiscoveryScene(ctx);
 	}
