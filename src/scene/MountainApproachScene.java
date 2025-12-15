@@ -85,6 +85,11 @@ public class MountainApproachScene implements Scene {
 			gm.sayf("--- %d のダメージを受ける ---", damage);
 			player.damageHp(damage);
 			gm.sayf("HP %d -> %d", player.getMaxHp(), player.getHp());
+			
+			if (player.isDead()) {
+				return new DeathScene(ctx);
+			}
+			
 			gm.waitEnter();
 			
 			gm.say("""

@@ -36,12 +36,25 @@ public class Character {
         this.biologySkill = biologySkill;
     }
     
+    /**
+     * HPを減少させるメソッド
+     * 0以下の負の数値になった場合は、0とする
+     * @param amount 減少させる数値
+     */
     public void damageHp(int amount) {
     	hp -= amount;
     	
     	if (hp < 0) {
     		hp = 0;
     	}
+    }
+    
+    /**
+     * 死亡判定 -> HPが0以下になるとtrue
+     * @return
+     */
+    public boolean isDead() {
+    	return hp <= 0;
     }
     
     //  getter / setter
