@@ -50,11 +50,32 @@ public class Character {
     }
     
     /**
+     * SANを減少させるメソッド
+     * 0以下の負の数値になった場合は、0とする
+     * @param amount 減少させる数値
+     */
+    public void damageSan(int amount) {
+    	san -= amount;
+    	
+    	if (san < 0) {
+    		san = 0;
+    	}
+    }
+    
+    /**
      * 死亡判定 -> HPが0以下になるとtrue
      * @return
      */
     public boolean isDead() {
     	return hp <= 0;
+    }
+    
+    /**
+     * 廃人判定 -> sanが0以下になるとtrue
+     * @return
+     */
+    public boolean isInsane() {
+    	return san <= 0;
     }
     
     //  getter / setter
