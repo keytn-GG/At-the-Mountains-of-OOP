@@ -7,7 +7,7 @@ import view.CharacterStatusView;
 /**
  * 確定したプレイヤーキャラクターの能力値を確認するシーン
  */
-public class StatusViewScene extends BaseScene implements Scene {
+public class Act00StatusViewScene extends BaseScene implements Scene {
     private final CharacterStatusView view;
     
     /**
@@ -15,7 +15,7 @@ public class StatusViewScene extends BaseScene implements Scene {
      * 継承 + CharacterStatusView
      * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
      */
-    public StatusViewScene(GameContext ctx) {
+    public Act00StatusViewScene(GameContext ctx) {
         super(ctx);
         this.view = new CharacterStatusView(ctx.getGm());
     }
@@ -66,6 +66,6 @@ public class StatusViewScene extends BaseScene implements Scene {
         gm.say("--- Enterで出発の準備を進める ---");
         gm.waitEnter();
         
-        return new ExpeditionStartScene(ctx);
+        return new Act01ExpeditionStartScene(ctx);
     };
 }

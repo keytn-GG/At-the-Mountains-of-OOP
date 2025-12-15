@@ -8,7 +8,7 @@ import game.GameContext;
  * 第1幕のシーン2
  * HP減少イベントあり
  */
-public class MountainApproachScene extends BaseScene implements Scene {
+public class Act01MountainApproachScene extends BaseScene implements Scene {
     private Character player;
 
     /**
@@ -16,7 +16,7 @@ public class MountainApproachScene extends BaseScene implements Scene {
      * 継承 + player
      * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
      */
-    public MountainApproachScene(GameContext ctx) {
+    public Act01MountainApproachScene(GameContext ctx) {
         super(ctx);
         this.player = ctx.getPlayer();
     }
@@ -133,6 +133,6 @@ public class MountainApproachScene extends BaseScene implements Scene {
                 """);
         gm.waitEnter();
 
-        return new RuinsDiscoveryScene(ctx);
+        return new Act02RuinsDiscoveryScene(ctx);
     }
 }

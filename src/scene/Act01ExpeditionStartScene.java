@@ -6,7 +6,7 @@ import game.GameContext;
 /**
  * 第1幕：調査開始シーン
  */
-public class ExpeditionStartScene extends BaseScene implements Scene {
+public class Act01ExpeditionStartScene extends BaseScene implements Scene {
 	private Character player;
 	
 	/**
@@ -14,7 +14,7 @@ public class ExpeditionStartScene extends BaseScene implements Scene {
 	 * 継承 + player
 	 * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
 	 */
-	public ExpeditionStartScene(GameContext ctx) {
+	public Act01ExpeditionStartScene(GameContext ctx) {
 		super(ctx);
 		this.player = ctx.getPlayer();
 	}
@@ -81,6 +81,6 @@ public class ExpeditionStartScene extends BaseScene implements Scene {
 				""");
 		gm.waitEnter();
 		
-		return new MountainApproachScene(ctx);
+		return new Act01MountainApproachScene(ctx);
 	}
 }

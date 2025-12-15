@@ -8,7 +8,7 @@ import game.GameContext;
  * 第3幕のシーン1
  * HP減少イベントあり
  */
-public class AvalancheScene extends BaseScene implements Scene {
+public class Act03AvalancheScene extends BaseScene implements Scene {
     private Character player;
     
     /**
@@ -16,7 +16,7 @@ public class AvalancheScene extends BaseScene implements Scene {
      * 継承 + player
      * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
      */
-    public AvalancheScene(GameContext ctx) {
+    public Act03AvalancheScene(GameContext ctx) {
         super(ctx);
         this.player = ctx.getPlayer();
     }

@@ -5,13 +5,13 @@ import game.GameContext;
 /**
  * ゲームの設定や舞台などのイントロシーン
  */
-public class IntroScene extends BaseScene implements Scene {
+public class Act00IntroScene extends BaseScene implements Scene {
     /**
      * コンストラクタ
      * 継承のみ
      * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
      */
-    public IntroScene(GameContext ctx) {
+    public Act00IntroScene(GameContext ctx) {
         super(ctx);
     }
     
@@ -62,6 +62,6 @@ public class IntroScene extends BaseScene implements Scene {
     	gm.say("--- Enterでキャンプへ合流する ---");
     	gm.waitEnter();
     	
-        return new CharacterCreateScene(ctx);
+        return new Act00CharacterCreateScene(ctx);
     }
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 import game.GameContext;
 import gamemaster.GameMaster;
 import scene.Scene;
-import scene.TitleScene;
+import scene.Act00TitleScene;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class Main {
         GameContext ctx = new GameContext(sc, gm);
 
         // 最初のシーンだけインスタンス化。ctxを渡す。
-        Scene scene = new TitleScene(ctx);
+        Scene scene = new Act00TitleScene(ctx);
 
         // sceneに何も返ってこなくなるまで繰り返す
         while (scene != null) {

@@ -69,6 +69,6 @@ public class DeathScene extends BaseScene implements Scene {
 				""");
 		gm.waitEnter();
 		
-		return new TitleScene(ctx);
+		return new Act00TitleScene(ctx);
 	}
 }

@@ -8,7 +8,7 @@ import game.GameContext;
  * 第2幕のシーン2
  * 途中でSAN減少イベントあり
  */
-public class CampNightScene extends BaseScene implements Scene {
+public class Act02CampNightScene extends BaseScene implements Scene {
     private Character player;
     
     /**
@@ -16,7 +16,7 @@ public class CampNightScene extends BaseScene implements Scene {
      * 継承 + player
      * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
      */
-    public CampNightScene(GameContext ctx) {
+    public Act02CampNightScene(GameContext ctx) {
         super(ctx);
         this.player = ctx.getPlayer();
     }
@@ -143,6 +143,6 @@ public class CampNightScene extends BaseScene implements Scene {
                 """);
         gm.waitEnter();
         
-        return new AvalancheScene(ctx);
+        return new Act03AvalancheScene(ctx);
     }
 }
