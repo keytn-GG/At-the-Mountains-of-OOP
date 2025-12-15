@@ -3,7 +3,7 @@ package scene;
 import character.Character;
 import game.GameContext;
 
-public class DeathScene extends BaseScne implements Scene {
+public class DeathScene extends BaseScene implements Scene {
 	private Character player;
 	
 	public DeathScene(GameContext ctx) {
