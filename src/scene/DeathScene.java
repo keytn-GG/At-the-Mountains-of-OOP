@@ -25,6 +25,12 @@ public class DeathScene extends BaseScene implements Scene {
 	 */
 	@Override
 	public Scene play() {
+	    gm.say("...");
+	    gm.waitEnter();
+	    
+	    gm.say("......");
+	    gm.waitEnter();
+	    
 		gm.say("""
 				風が鳴っている。
 				あるいは、それはただの音ではなく、

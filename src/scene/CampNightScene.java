@@ -143,6 +143,6 @@ public class CampNightScene extends BaseScene implements Scene {
                 """);
         gm.waitEnter();
         
-        return null;
+        return new AvalancheScene(ctx);
     }
 }

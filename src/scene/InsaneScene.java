@@ -24,6 +24,12 @@ public class InsaneScene extends BaseScene implements Scene {
 	 * SANが 0 になって完全に発狂した場合のシーン
 	 */
 	public Scene play() {
+	    gm.say("...");
+        gm.waitEnter();
+        
+        gm.say("......");
+        gm.waitEnter();
+        
 		gm.say("""
 				それは、音から始まった。
 				
