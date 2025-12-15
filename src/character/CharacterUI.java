@@ -39,6 +39,8 @@ public class CharacterUI {
         gm.waitEnter();
         
         gm.say("「長旅ご苦労だった。まずは名前を聞かせてくれ」");
+        gm.waitEnter();
+        
         gm.say("--- 自分の名前を入力しよう ---");
         String name;
         while(true) {

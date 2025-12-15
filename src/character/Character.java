@@ -35,7 +35,11 @@ public class Character {
         this.navigateSkill = navigateSkill;
         this.biologySkill = biologySkill;
     }
-
+    
+    public void damageHp(int damage) {
+    	this.hp -= damage;
+    }
+    
     //  getter / setter
     public int getHp() {
         return hp;
