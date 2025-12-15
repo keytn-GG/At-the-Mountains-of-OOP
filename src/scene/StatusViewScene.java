@@ -32,7 +32,7 @@ public class StatusViewScene implements Scene {
     public Scene play() {
         Character player = ctx.getPlayer();
         
-        gm.say("隊長は書類を閉じ、君の方を向く。");
+        gm.say("隊長はペンを置き、君の方を向く。");
         gm.say("ランプの明かりが、紙面に記された数値を淡く照らしている。");
         gm.waitEnter();
         
@@ -54,10 +54,19 @@ public class StatusViewScene implements Scene {
         gm.say("「覚悟だけは、今ここで決めておけ」");
         gm.waitEnter();
         
-        gm.say("（ついに過酷な調査が始まる......）");
+        gm.say("隊長の言葉に身が引き締まる。");
+        gm.waitEnter();
+        
+        gm.say("この名状しがたい過酷な山脈で、体力や精神力が尽きたとき......");
+        gm.say("自分の身に何が起きるのか、想像に難くない。");
+        gm.waitEnter();
+        
+        gm.say("——あるいは、想像もできないような何かが起こるのだろうか。");
+        
+        gm.say("ついに過酷な調査が始まる......");
         gm.say("--- Enterで出発の準備を進める ---");
         gm.waitEnter();
         
-        return null;
+        return new ExpeditionStartScene(ctx);
     };
 }
