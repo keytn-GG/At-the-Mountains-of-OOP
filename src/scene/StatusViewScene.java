@@ -2,6 +2,7 @@ package scene;
 
 import character.Character;
 import game.GameContext;
+import gamemaster.GameMaster;
 import view.CharacterStatusView;
 
 /**
@@ -9,6 +10,7 @@ import view.CharacterStatusView;
  */
 public class StatusViewScene implements Scene {
     private final GameContext ctx;
+    private final GameMaster gm;
     private final CharacterStatusView view;
     
     /**
@@ -17,6 +19,7 @@ public class StatusViewScene implements Scene {
      */
     public StatusViewScene(GameContext ctx) {
         this.ctx = ctx;
+        this.gm = ctx.getGm();
         this.view = new CharacterStatusView(ctx.getGm());
     }
     
@@ -29,8 +32,31 @@ public class StatusViewScene implements Scene {
     public Scene play() {
         Character player = ctx.getPlayer();
         
+        gm.say("隊長は書類を閉じ、君の方を向く。");
+        gm.say("ランプの明かりが、紙面に記された数値を淡く照らしている。");
+        gm.waitEnter();
+        
+        gm.say("「よし……これが、今の君の状態だ」");
+        gm.say("");
+        
         view.show(player);
-        ctx.getGm().waitEnter();
+        gm.waitEnter();
+        
+        gm.say("紙に記された数値は、南極という過酷な土地で");
+        gm.say("君がどれだけ生き延びられるかを、無言で語っている。");
+        gm.waitEnter();
+        
+        gm.say("「数値はただの目安に過ぎない」");
+        gm.say("「だが……ここでは、その“目安”が命を分ける」");
+        gm.waitEnter();
+        
+        gm.say("「山に入れば、思い通りにはならん」");
+        gm.say("「覚悟だけは、今ここで決めておけ」");
+        gm.waitEnter();
+        
+        gm.say("（ついに過酷な調査が始まる......）");
+        gm.say("--- Enterで出発の準備を進める ---");
+        gm.waitEnter();
         
         return null;
     };

@@ -1,12 +1,14 @@
 package scene;
 
 import game.GameContext;
+import gamemaster.GameMaster;
 
 /**
  * タイトルを表示するシーン
  */
 public class TitleScene implements Scene {
     private final GameContext ctx;
+    private final GameMaster gm;
     
     /**
      * コンストラクタ
@@ -14,6 +16,7 @@ public class TitleScene implements Scene {
      */
     public TitleScene(GameContext ctx) {
         this.ctx = ctx;
+        this.gm = ctx.getGm();
     }
     
     /**
@@ -22,7 +25,7 @@ public class TitleScene implements Scene {
      */
     @Override
     public Scene play() {
-        ctx.getGm().say("""
+        gm.say("""
                 
                 A T   T H E   M O U N T A I N S   O F   O O P
                      ---------------------------------
@@ -46,8 +49,8 @@ public class TitleScene implements Scene {
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
                 """);
-        
-        ctx.getGm().waitEnter();
+        gm.say("--- Enterでゲームを開始する ---");
+        gm.waitEnter();
         
         return new IntroScene(ctx);
     }
