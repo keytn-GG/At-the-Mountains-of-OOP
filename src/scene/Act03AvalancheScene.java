@@ -128,6 +128,6 @@ public class Act03AvalancheScene extends BaseScene implements Scene {
                 """);
         gm.waitEnter();
         
-        return null;
+        return new Act03EncounterScene(ctx);
     }
 }
