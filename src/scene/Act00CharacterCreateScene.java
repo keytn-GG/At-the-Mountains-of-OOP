@@ -9,13 +9,13 @@ import game.GameContext;
 /**
  * キャラクターを作るシーン
  */
-public class CharacterCreateScene extends BaseScene implements Scene {
+public class Act00CharacterCreateScene extends BaseScene implements Scene {
     /**
      * コンストラクタ
      * 継承のみ
      * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
      */
-    public CharacterCreateScene(GameContext ctx) {
+    public Act00CharacterCreateScene(GameContext ctx) {
         super(ctx);
     }
 
@@ -50,6 +50,6 @@ public class CharacterCreateScene extends BaseScene implements Scene {
         // 作ったキャラクターをGameContextにセットする
         ctx.setPlayer(player);
 
-        return new StatusViewScene(ctx);
+        return new Act00StatusViewScene(ctx);
     };
 }

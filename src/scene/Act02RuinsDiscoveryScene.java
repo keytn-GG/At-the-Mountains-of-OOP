@@ -8,7 +8,7 @@ import game.GameContext;
  * 第2幕：異常の発見シーン
  * SAN減少イベントあり
  */
-public class RuinsDiscoveryScene extends BaseScene implements Scene {
+public class Act02RuinsDiscoveryScene extends BaseScene implements Scene {
 	private Character player;
 	
 	/**
@@ -16,7 +16,7 @@ public class RuinsDiscoveryScene extends BaseScene implements Scene {
 	 * 継承 + player
 	 * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
 	 */
-	public RuinsDiscoveryScene(GameContext ctx) {
+	public Act02RuinsDiscoveryScene(GameContext ctx) {
 		super(ctx);
 		this.player = ctx.getPlayer();
 	}
@@ -186,6 +186,6 @@ public class RuinsDiscoveryScene extends BaseScene implements Scene {
                 """);
         gm.waitEnter();
 		
-		return new CampNightScene(ctx);
+		return new Act02CampNightScene(ctx);
 	}
 }
