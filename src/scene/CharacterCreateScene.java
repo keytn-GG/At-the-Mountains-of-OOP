@@ -10,6 +10,11 @@ import game.GameContext;
  * キャラクターを作るシーン
  */
 public class CharacterCreateScene extends BaseScene implements Scene {
+    /**
+     * コンストラクタ
+     * 継承のみ
+     * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
+     */
     public CharacterCreateScene(GameContext ctx) {
         super(ctx);
     }

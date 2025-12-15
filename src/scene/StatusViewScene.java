@@ -4,14 +4,26 @@ import character.Character;
 import game.GameContext;
 import view.CharacterStatusView;
 
+/**
+ * 確定したプレイヤーキャラクターの能力値を確認するシーン
+ */
 public class StatusViewScene extends BaseScene implements Scene {
     private final CharacterStatusView view;
     
+    /**
+     * コンストラクタ
+     * 継承 + CharacterStatusView
+     * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
+     */
     public StatusViewScene(GameContext ctx) {
         super(ctx);
         this.view = new CharacterStatusView(ctx.getGm());
     }
     
+    /**
+     * このシーンのplay()
+     * テキストのみ
+     */
     @Override
     public Scene play() {
         Character player = ctx.getPlayer();
@@ -23,7 +35,7 @@ public class StatusViewScene extends BaseScene implements Scene {
         gm.say("「よし……これが、今の君の状態だ」");
         gm.say("");
         
-        view.show(player);
+        view.show(player); // ここでステータス確認
         gm.waitEnter();
         
         gm.say("紙に記された数値は、南極という過酷な土地で");

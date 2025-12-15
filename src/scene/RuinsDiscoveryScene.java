@@ -4,14 +4,29 @@ import character.Character;
 import dice.Dice;
 import game.GameContext;
 
+/**
+ * 第2幕：異常の発見シーン
+ * SAN減少イベントあり
+ */
 public class RuinsDiscoveryScene extends BaseScene implements Scene {
 	private Character player;
 	
+	/**
+	 * コンストラクタ
+	 * 継承 + player
+	 * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
+	 */
 	public RuinsDiscoveryScene(GameContext ctx) {
 		super(ctx);
 		this.player = ctx.getPlayer();
 	}
 	
+	/**
+	 * このシーンのplay()
+	 * 途中でSAN減少イベント
+	 * SANが 0 になった場合に廃人エンディングに分岐
+	 */
+	@Override
 	public Scene play() {
 		gm.say("""
 				~~~~~~~~~~~~~~~~~~~~~~~

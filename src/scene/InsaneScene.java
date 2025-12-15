@@ -3,14 +3,26 @@ package scene;
 import character.Character;
 import game.GameContext;
 
+/**
+ * 廃人エンディングシーン
+ */
 public class InsaneScene extends BaseScene implements Scene {
 	private Character player;
 	
+	/**
+	 * コンストラクタ
+	 * 継承 + player
+	 * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
+	 */
 	public InsaneScene(GameContext ctx) {
 		super(ctx);
 		this.player = ctx.getPlayer();
 	}
 	
+	/**
+	 * このシーンのplay()
+	 * SANが 0 になって完全に発狂した場合のシーン
+	 */
 	public Scene play() {
 		gm.say("""
 				それは、音から始まった。
