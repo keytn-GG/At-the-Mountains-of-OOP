@@ -47,19 +47,19 @@ public class Act01MountainApproachScene extends BaseScene implements Scene {
         gm.waitEnter();
 
         gm.say("""
-                --- 登攀チェックを行います ---
-                --- 1D100 <= 登攀スキル で成功 ---
+                --- ナビゲートチェックを行います ---
+                --- 1D100 <= ナビゲートスキル で成功 ---
                 """);
         gm.waitEnter();
 
         Dice checkDice = new Dice(1, 100);
         int roll = checkDice.roll();
 
-        if (roll <= player.getClimbSkill()) {
+        if (roll <= player.getNavigateSkill()) {
             gm.say("......");
             gm.waitEnter();
 
-            gm.sayf("--- %d （あなたの技能値: %d） 成功！ ---", roll, player.getClimbSkill());
+            gm.sayf("--- %d （あなたの技能値: %d） 成功！ ---", roll, player.getNavigateSkill());
             gm.waitEnter();
 
             gm.say("""
@@ -77,7 +77,7 @@ public class Act01MountainApproachScene extends BaseScene implements Scene {
             gm.say("......");
             gm.waitEnter();
 
-            gm.sayf("--- %d （あなたの技能値: %d） -> 失敗！ ---", roll, player.getClimbSkill());
+            gm.sayf("--- %d （あなたの技能値: %d） -> 失敗！ ---", roll, player.getNavigateSkill());
             gm.waitEnter();
 
             gm.say("""
