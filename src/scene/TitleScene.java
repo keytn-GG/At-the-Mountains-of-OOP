@@ -1,22 +1,13 @@
 package scene;
 
 import game.GameContext;
-import gamemaster.GameMaster;
 
 /**
  * タイトルを表示するシーン
  */
-public class TitleScene implements Scene {
-    private final GameContext ctx;
-    private final GameMaster gm;
-    
-    /**
-     * コンストラクタ
-     * @param ctx GameContextを受け取る変数
-     */
+public class TitleScene extends BaseScene implements Scene {
     public TitleScene(GameContext ctx) {
-        this.ctx = ctx;
-        this.gm = ctx.getGm();
+        super(ctx);
     }
     
     /**

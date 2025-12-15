@@ -3,16 +3,12 @@ package scene;
 import character.Character;
 import dice.Dice;
 import game.GameContext;
-import gamemaster.GameMaster;
 
-public class RuinsDiscoveryScene implements Scene {
-	private final GameContext ctx;
-	private final GameMaster gm;
+public class RuinsDiscoveryScene extends BaseScene implements Scene {
 	private Character player;
 	
 	public RuinsDiscoveryScene(GameContext ctx) {
-		this.ctx = ctx;
-		this.gm = ctx.getGm();
+		super(ctx);
 		this.player = ctx.getPlayer();
 	}
 	

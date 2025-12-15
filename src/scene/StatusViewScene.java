@@ -2,32 +2,16 @@ package scene;
 
 import character.Character;
 import game.GameContext;
-import gamemaster.GameMaster;
 import view.CharacterStatusView;
 
-/**
- * プレーヤーキャラクターのステータスを表示するシーン
- */
-public class StatusViewScene implements Scene {
-    private final GameContext ctx;
-    private final GameMaster gm;
+public class StatusViewScene extends BaseScene implements Scene {
     private final CharacterStatusView view;
     
-    /**
-     * コンストラクタ
-     * @param ctx シーンに渡されるデータをまとめたもの -> GameContext
-     */
     public StatusViewScene(GameContext ctx) {
-        this.ctx = ctx;
-        this.gm = ctx.getGm();
+        super(ctx);
         this.view = new CharacterStatusView(ctx.getGm());
     }
     
-    /**
-     * このシーンのplay()
-     * ctxからplayerを取得して、CharacterStatusViewクラスのshow()を利用する
-     * 次のSceneをreturnする -> 直前のシーンに戻る処理を入れる予定
-     */
     @Override
     public Scene play() {
         Character player = ctx.getPlayer();

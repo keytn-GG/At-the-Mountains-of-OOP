@@ -2,16 +2,12 @@ package scene;
 
 import character.Character;
 import game.GameContext;
-import gamemaster.GameMaster;
 
-public class InsaneScene implements Scene {
-	private final GameContext ctx;
-	private final GameMaster gm;
+public class InsaneScene extends BaseScene implements Scene {
 	private Character player;
 	
 	public InsaneScene(GameContext ctx) {
-		this.ctx = ctx;
-		this.gm = ctx.getGm();
+		super(ctx);
 		this.player = ctx.getPlayer();
 	}
 	

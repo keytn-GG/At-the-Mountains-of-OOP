@@ -3,16 +3,12 @@ package scene;
 import character.Character;
 import dice.Dice;
 import game.GameContext;
-import gamemaster.GameMaster;
 
-public class MountainApproachScene implements Scene {
-	private final GameContext ctx;
-	private final GameMaster gm;
+public class MountainApproachScene extends BaseScene implements Scene {
 	private Character player;
 	
 	public MountainApproachScene(GameContext ctx) {
-		this.ctx = ctx;
-		this.gm = ctx.getGm();
+		super(ctx);
 		this.player = ctx.getPlayer();
 	}
 	
@@ -103,6 +99,6 @@ public class MountainApproachScene implements Scene {
 				山は、まだ始まったばかりだ。
 				""");
 		
-		return null;
+		return new RuinsDiscoveryScene(ctx);
 	}
 }

@@ -4,8 +4,8 @@ import game.GameContext;
 import gamemaster.GameMaster;
 
 public abstract class BaseScene {
-    private final GameContext ctx;
-    private final GameMaster gm;
+    protected final GameContext ctx;
+    protected final GameMaster gm;
     
     public BaseScene(GameContext ctx) {
         this.ctx = ctx;
