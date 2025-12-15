@@ -2,16 +2,12 @@ package scene;
 
 import character.Character;
 import game.GameContext;
-import gamemaster.GameMaster;
 
-public class DeathScene implements Scene {
-	private final GameContext ctx;
-	private final GameMaster gm;
+public class DeathScene extends BaseScne implements Scene {
 	private Character player;
 	
 	public DeathScene(GameContext ctx) {
-		this.ctx = ctx;
-		this.gm = ctx.getGm();
+	    super(ctx);
 		this.player = ctx.getPlayer();
 	}
 	

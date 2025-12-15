@@ -1,28 +1,12 @@
 package scene;
 
 import game.GameContext;
-import gamemaster.GameMaster;
 
-/**
- * ゲームの導入部分を表示するシーン
- */
-public class IntroScene implements Scene {
-    private final GameContext ctx;
-    private final GameMaster gm;
-    
-    /**
-     * コンストラクタ
-     * @param ctx GameContextを受け取る変数
-     */
+public class IntroScene extends BaseScene implements Scene {
     public IntroScene(GameContext ctx) {
-        this.ctx = ctx;
-        this.gm = ctx.getGm();
+        super(ctx);
     }
     
-    /**
-     * このSceneのplay()
-     * 
-     */
     @Override
     public Scene play() {
     	gm.say("南極大陸。\n人類が地図に書き残した、最後の空白。");

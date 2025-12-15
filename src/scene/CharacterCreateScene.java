@@ -5,22 +5,13 @@ import character.CharacterBuilder;
 import character.CharacterSpec;
 import character.CharacterUI;
 import game.GameContext;
-import gamemaster.GameMaster;
 
 /**
  * キャラクターを作るシーン
  */
-public class CharacterCreateScene implements Scene {
-    private final GameContext ctx;
-    private final GameMaster gm;
-
-    /**
-     * コンストラクタ
-     * @param ctx シーンに渡されるデータをまとめたもの -> GameContext
-     */
+public class CharacterCreateScene extends BaseScene implements Scene {
     public CharacterCreateScene(GameContext ctx) {
-        this.ctx = ctx;
-        this.gm = ctx.getGm();
+        super(ctx);
     }
 
     /**
