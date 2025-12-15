@@ -25,6 +25,7 @@ public class StatusViewScene implements Scene {
      * ctxからplayerを取得して、CharacterStatusViewクラスのshow()を利用する
      * 次のSceneをreturnする -> 直前のシーンに戻る処理を入れる予定
      */
+    @Override
     public Scene play() {
         Character player = ctx.getPlayer();
         

@@ -33,6 +33,7 @@ public class CharacterCreateScene implements Scene {
      * 6. キャラクターをctxのplayerに格納
      * 7. 次のシーンにctxを渡しながらインスタンス化する
      */
+    @Override
     public Scene play() {
         // キャラクターのデータを作る
         CharacterUI ui = new CharacterUI(ctx.getSc(), gm);
