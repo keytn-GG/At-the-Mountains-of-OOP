@@ -114,7 +114,7 @@ public class Act02CampNightScene extends BaseScene implements Scene {
             gm.sayf("正気度 %d -> %d", beforeSan, afterSan);
             
             if (player.isInsane()) {
-                return new InsaneScene(ctx);
+                return new EndingInsaneScene(ctx);
             }
             
             gm.waitEnter();

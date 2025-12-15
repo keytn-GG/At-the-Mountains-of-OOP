@@ -6,7 +6,7 @@ import game.GameContext;
 /**
  * 廃人エンディングシーン
  */
-public class InsaneScene extends BaseScene implements Scene {
+public class EndingInsaneScene extends BaseScene implements Scene {
 	private Character player;
 	
 	/**
@@ -14,7 +14,7 @@ public class InsaneScene extends BaseScene implements Scene {
 	 * 継承 + player
 	 * @param ctx GameContext（Scannerとゲームマスターのインスタンスをまとめたもの）を受け取る
 	 */
-	public InsaneScene(GameContext ctx) {
+	public EndingInsaneScene(GameContext ctx) {
 		super(ctx);
 		this.player = ctx.getPlayer();
 	}

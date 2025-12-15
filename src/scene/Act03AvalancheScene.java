@@ -76,7 +76,7 @@ public class Act03AvalancheScene extends BaseScene implements Scene {
         gm.sayf("HP %d -> %d", beforeHp, afterHp);
 
         if (player.isDead()) {
-            return new DeathScene(ctx);
+            return new EndingDeathScene(ctx);
         }
         
         gm.waitEnter();
@@ -128,6 +128,6 @@ public class Act03AvalancheScene extends BaseScene implements Scene {
                 """);
         gm.waitEnter();
         
-        return null;
+        return new Act03EncounterScene(ctx);
     }
 }
