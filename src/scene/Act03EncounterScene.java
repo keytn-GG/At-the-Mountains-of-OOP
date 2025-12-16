@@ -149,7 +149,7 @@ public class Act03EncounterScene extends BaseScene implements Scene {
                         
             gm.say("""
                     --- 理性が耐えきれない ---
-                    --- 正気度を 1D20 失う ---
+                    --- 正気度を 2D20 失う ---
                     """);
             
             // 変化前の現在値をローカル変数に閉じ込める
