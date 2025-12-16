@@ -305,6 +305,6 @@ public class Act03PeakAttackScene extends BaseScene implements Scene {
                 """);
         gm.waitEnter();
         
-        return null;
+        return new EndingUnderTheSunScene(ctx);
     }
 }
