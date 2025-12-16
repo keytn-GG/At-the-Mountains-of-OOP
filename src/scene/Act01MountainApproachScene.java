@@ -87,15 +87,15 @@ public class Act01MountainApproachScene extends BaseScene implements Scene {
             gm.waitEnter();
 
             gm.say("""
-                    --- バランスを失い岩壁に叩きつけられる！ ---
-                    --- 1D6 のHPダメージロール ---
+                    --- バランスを失い岩壁に体をぶつけてしまう！ ---
+                    --- 1D3 のHPダメージロール ---
                     """);
 
             // 変化前の現在値をローカル変数に閉じ込める
             int beforeHp = player.getHp();
 
             // ダメージ決定ロール
-            Dice damageDice = new Dice(1, 6);
+            Dice damageDice = new Dice(1, 3);
             int damage = damageDice.roll();
 
             // ダメージを与える

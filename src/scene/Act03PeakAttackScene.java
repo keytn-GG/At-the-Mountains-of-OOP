@@ -200,14 +200,14 @@ public class Act03PeakAttackScene extends BaseScene implements Scene {
 
             gm.say("""
                     --- かろうじて突き出た岩場にしがみつく ---
-                    --- 1D6 のHPダメージロール ---
+                    --- 1D10 のHPダメージロール ---
                     """);
 
             // 変化前の現在値をローカル変数に閉じ込める
             int beforeHp = player.getHp();
 
             // ダメージ決定ロール
-            Dice damageDice = new Dice(1, 6);
+            Dice damageDice = new Dice(1, 10);
             int damage = damageDice.roll();
 
             // ダメージを与える
@@ -305,6 +305,6 @@ public class Act03PeakAttackScene extends BaseScene implements Scene {
                 """);
         gm.waitEnter();
         
-        return null;
+        return new EndingUnderTheSunScene(ctx);
     }
 }

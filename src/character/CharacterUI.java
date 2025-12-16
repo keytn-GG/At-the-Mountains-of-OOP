@@ -67,7 +67,7 @@ public class CharacterUI {
         gm.say("「見たところ……君の体力は」");
         gm.waitEnter();
         Dice hpDice = new Dice(3, 6);
-        int hp = hpDice.roll() + 10;
+        int hp = hpDice.roll() + 14;
         gm.sayf("「…… %d といったところだな」", hp);
         gm.say("「無理はするな。ここでは、倒れたら終わりだ」");
         gm.waitEnter();
@@ -162,8 +162,6 @@ public class CharacterUI {
                 gm.sayf("ナビゲート -> %d", navigate);
                 gm.sayf("生物学 -> %d", biology);
                 gm.say("---------------------------------");
-                gm.waitEnter();
-
                 gm.say("「間違いはないか？」（y/n）");
                 String res = sc.nextLine().trim();
                 //                        ^^^^^^^ String型で使える「スペースなどを取り除く」メソッド」

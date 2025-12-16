@@ -53,6 +53,11 @@ public class Act03EncounterScene extends BaseScene implements Scene {
         gm.waitEnter();
         
         gm.say("""
+        		振り向くと。
+        		""");
+        gm.waitEnter();
+        
+        gm.say("""
                 隊長だ！生きていたのだ！
                 何と幸運なことか！
                 
@@ -144,7 +149,7 @@ public class Act03EncounterScene extends BaseScene implements Scene {
                         
             gm.say("""
                     --- 理性が耐えきれない ---
-                    --- 正気度を 1D20 失う ---
+                    --- 正気度を 2D20 失う ---
                     """);
             
             // 変化前の現在値をローカル変数に閉じ込める
@@ -176,7 +181,7 @@ public class Act03EncounterScene extends BaseScene implements Scene {
         
         gm.say("""
                 「……目を逸らすな」
-                「逸らした瞬間に、足が止まる」
+                「あれが何かはわからないが……」
                 """);
         gm.waitEnter();
         
@@ -213,7 +218,7 @@ public class Act03EncounterScene extends BaseScene implements Scene {
                 """);
         gm.waitEnter();
         
-        gm.say("「走れ。今すぐだ」");
+        gm.say("「走れ！今すぐだ！」");
         gm.waitEnter();
         
         gm.say("""
@@ -249,9 +254,12 @@ public class Act03EncounterScene extends BaseScene implements Scene {
         gm.waitEnter();
         
         gm.say("""
-                吹雪と岩壁に阻まれ、下へは戻れない。
+        		何ということだ！
+        		ここは崖だ！
+        		
+                吹雪と岩壁に阻まれ、下は無限に続く闇だ。
                 
-                ここは陰になっているのか、眼前には暗黒が広がっている。
+                ここは陰になっているのか、太陽の光さえ差しこんでこない。
                 """);
         gm.waitEnter();
         
