@@ -257,9 +257,9 @@ public class Act03EncounterScene extends BaseScene implements Scene {
         		何ということだ！
         		ここは崖だ！
         		
-                吹雪と岩壁に阻まれ、下は無限に続く闇だ。
-                
-                ここは陰になっているのか、太陽の光さえ差しこんでこない。
+        		吹雪と岩壁に阻まれ、下は無限に続く闇だ。
+        		
+        		ここは陰になっているのか、太陽の光さえ差しこんでこない。
                 """);
         gm.waitEnter();
         
